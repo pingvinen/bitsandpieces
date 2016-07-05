@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A89B6EC2-0C94-426A-A596-F9806589CD03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>servicestacktests</RootNamespace>
+    <AssemblyName>servicestacktests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.60\lib\portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.4.0.60\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.4.0.60\lib\net40\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client">
+      <HintPath>..\packages\ServiceStack.Client.4.0.60\lib\net40\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack">
+      <HintPath>..\packages\ServiceStack.4.0.60\lib\net40\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeItEasy">
+      <HintPath>..\packages\FakeItEasy.2.1.0\lib\net40\FakeItEasy.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Package>nunit</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Funq\AutoRegisterTests.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderTests.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderTestStuff\RfpClassWeWant.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderTestStuff\RfpClassInDifferentNamespace.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderTestStuff\SubNs\RfpClassInSubNamespace.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderInjects\OnConstructor\RfpInjectOnConstructor.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderInjects\OnMethod\RfpInjectOnMethod.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderInjects\OnMultipleConstructors\RfpInjectOnMultipleConstructors.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderInjects\OnConstructor\RfpNoInjectAttributeOnConstructor.cs" />
+    <Compile Include="Funq\Internal\ReflectionProviderInjects\OnMethod\RfpNoInjectAttributeOnMethod.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\annotations\annotations.csproj">
+      <Project>{814890C6-D98E-4A78-8547-0358AF31716A}</Project>
+      <Name>annotations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\servicestack\servicestack.csproj">
+      <Project>{8FD6117D-273D-4200-95B8-55E726B89272}</Project>
+      <Name>servicestack</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Funq\" />
+    <Folder Include="Funq\Internal\" />
+    <Folder Include="Funq\Internal\ReflectionProviderTestStuff\" />
+    <Folder Include="Funq\Internal\ReflectionProviderTestStuff\SubNs\" />
+    <Folder Include="Funq\Internal\ReflectionProviderInjects\" />
+    <Folder Include="Funq\Internal\ReflectionProviderInjects\OnConstructor\" />
+    <Folder Include="Funq\Internal\ReflectionProviderInjects\OnMethod\" />
+    <Folder Include="Funq\Internal\ReflectionProviderInjects\OnMultipleConstructors\" />
+  </ItemGroup>
+</Project>

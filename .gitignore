@@ -1,0 +1,24 @@
+*.pidb
+*.userprefs
+*bin/
+*test-results/
+*.bak
+*.checksum
+*~
+*.orig
+*.user
+*obj/
+*.suo
+src/packages/*
+artifacts/*
+TestResult.xml
+
+##
+# visual studio code ignores
+src/.vs/*
+.vscode
+
+##
+# JetBrains Project Rider ignores
+src/.idea/*
+*.iml
