@@ -52,6 +52,9 @@
     <Compile Include="Funq\Internal\InjectedType.cs" />
     <Compile Include="Funq\Internal\ReflectionProvider.cs" />
     <Compile Include="Funq\Internal\ContainerWirerer.cs" />
+    <Compile Include="..\core\Properties\LibraryVersion.cs">
+      <Link>Properties\LibraryVersion.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

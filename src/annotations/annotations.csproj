@@ -33,6 +33,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IoC\InjectAttribute.cs" />
+    <Compile Include="..\core\Properties\LibraryVersion.cs">
+      <Link>Properties\LibraryVersion.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
