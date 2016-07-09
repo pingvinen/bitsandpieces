@@ -17,16 +17,21 @@ namespace BitsAndPieces.ServiceStack.Funq
 		private readonly ReflectionProvider reflectionProvider;
 		private readonly ContainerWirerer wirerer;
 
+		/// <summary>
+		/// This constructor is meant to be used when consuming the class
+		/// </summary>
 		public AutoRegister() : this(new ReflectionProvider(), new ContainerWirerer())
 		{
-			// this constructor is for consuming the class
 		}
 
+		/// <summary>
+		/// This constructor is meant for testing purposes, as it provides an injection
+		/// point for Mocks
+		/// </summary>
+		/// <param name="reflectionProvider">Reflection provider</param>
+		/// <param name="wirerer">Wirerer</param>
 		public AutoRegister(ReflectionProvider reflectionProvider, ContainerWirerer wirerer)
 		{
-			// this container is for testing, in the sense that it provides an injection
-			// point for Mocked helpers
-
 			this.reflectionProvider = reflectionProvider;
 			this.wirerer = wirerer;
 		}
