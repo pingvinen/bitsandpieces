@@ -63,6 +63,8 @@
     <Compile Include="Funq\Internal\ReflectionProviderInjects\OnMultipleConstructors\RfpInjectOnMultipleConstructors.cs" />
     <Compile Include="Funq\Internal\ReflectionProviderInjects\OnConstructor\RfpNoInjectAttributeOnConstructor.cs" />
     <Compile Include="Funq\Internal\ReflectionProviderInjects\OnMethod\RfpNoInjectAttributeOnMethod.cs" />
+    <Compile Include="Funq\Internal\ContainerWirererTests.cs" />
+    <Compile Include="Funq\Internal\ContainerWirererInTestClass.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
